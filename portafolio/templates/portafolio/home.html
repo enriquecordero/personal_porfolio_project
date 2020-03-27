@@ -1,0 +1,11 @@
+{% extends "portafolio/base.html" %} {% load static %} {% block content %}
+
+
+<!-- <a href="{% url 'blog:all_blogs' %}">Blogs </a> -->
+<a href="{% static 'portafolio/WorkingWithGPIO.pdf' %}">PDF </a>
+<img src="{% static 'portafolio/django.png' %}" alt=""> {% for project in projects %}
+<h2> {{ project.title}} </h2>
+<h2> {{ project.description}} </h2>
+<img src="{{ project.image.url }}" alt=""> {% endfor %} {% if project.url %}
+<br>
+<a href="{{ project.url  }}">Link</a> {% endif%}{% endblock %}
